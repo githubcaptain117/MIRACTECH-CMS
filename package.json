@@ -1,0 +1,32 @@
+{
+  "name": "cms",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.0",
+    "bootstrap-icons": "^1.5.0",
+    "date-fns": "^2.23.0",
+    "dayjs": "^1.10.7",
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-bootstrap": "^2.0.0-beta.6",
+    "react-datepicker": "^4.2.1",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-select": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.20",
+    "@types/react-datepicker": "^4.1.7",
+    "@types/react-select": "^4.0.17",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "typescript": "4.4.2"
+  }
+}
