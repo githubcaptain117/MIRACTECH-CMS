@@ -8,7 +8,7 @@ import { BsCheckBox, BsFileEarmarkArrowDown, BsPencilSquare, BsPlus, BsSearch, B
 import { MdAssignment, MdSearch } from 'react-icons/md';
 //-------------------------------------------------------------------
 import th from 'date-fns/locale/th';
-import AddandEditUser from '../../component/usermanagement/addandedituser';
+import Addbasicinfo from '../../component/basicinfo/addbasicinfo';
 registerLocale('th', th)
 
 
@@ -100,7 +100,7 @@ const Agencylist: NextPage = () => {
                         <Row className="mb-3">
                             <Col md="4">
                                 {/* <Button type="submit"><BsPlus /> เพิ่มข้อมูล</Button> */}
-                                <AddandEditUser />
+                                <Addbasicinfo />
                             </Col>
                             <Col md="4">
 

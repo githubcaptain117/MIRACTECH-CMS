@@ -1,15 +1,13 @@
 
 
 import type { NextComponentType } from 'next';
-import Select from 'react-select';
-import DatePicker from "react-datepicker";
 import { useState } from 'react';
-import { Button, Col, Form, Row, Card, Table, Modal, Accordion } from 'react-bootstrap';
+import { Button, Col, Form, Row, Card, Modal } from 'react-bootstrap';
 import styles from '../../styles/employsave.module.css';
-import { BsPlus, BsSearch } from 'react-icons/bs';
-import { MdSearch } from 'react-icons/md';
+import { BsPlus } from 'react-icons/bs';
+import Select from 'react-select';
 
-const AddandEditMenu: NextComponentType = () => {
+const Adddepreciationlist: NextComponentType = () => {
     const [validated, setValidated] = useState(false);
     const [today, settoday] = useState(new Date(new Date().setFullYear(new Date().getFullYear() + 543)));
     const [toyear, settoyear] = useState(new Date(new Date().setFullYear(new Date().getFullYear() + 543)));
@@ -30,25 +28,13 @@ const AddandEditMenu: NextComponentType = () => {
         { value: '03', label: 'สมหญืง - สอนดีมาก' }
     ]
 
-    const checkboxoptions = [
-        { cid: '01', values: true, label: 'ฝ่ายแผนงาน' },
-        { cid: '02', values: true, label: 'ผู้บริหาร' },
-        { cid: '03', values: false, label: 'ผู้ใช้ตามหน่วยงาน' },
-        { cid: '04', values: true, label: 'หัวหน้าหน่วยงาน' },
-        { cid: '05', values: true, label: 'ผู้ดูแลระบบ' }
-    ]
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const onchangecheckbox = (e: any) => {
-        console.log(e)
-    }
 
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
-                <BsPlus size="25px" title="Test" color="#fff"/>เพิ่มข้อมูล
+                <BsPlus size="25px" title="Test" color="#fff" />เพิ่มข้อมูล
             </Button>
 
             <div className="modal-container custom-map-modal">
@@ -66,7 +52,7 @@ const AddandEditMenu: NextComponentType = () => {
                 </Modal.Header> */}
                     <Modal.Body>
                         <Card>
-                            <Card.Header className="CardHeader" as="h5">จัดการเมนู</Card.Header>
+                            <Card.Header className="CardHeader" as="h5">หมวดเงินงบประมาณ</Card.Header>
                             <Card.Body>
                                 <Form>
                                     <Row>
@@ -75,7 +61,7 @@ const AddandEditMenu: NextComponentType = () => {
                                                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                                                     <Row className="mb-3">
                                                         <Form.Group as={Col} md="5" controlId="validationCustom01">
-                                                            <Form.Label>เมนูย่อย</Form.Label>
+                                                            <Form.Label>รหัส</Form.Label>
                                                             <Form.Control
                                                                 required
                                                                 type="text"
@@ -83,7 +69,7 @@ const AddandEditMenu: NextComponentType = () => {
                                                             />
                                                         </Form.Group>
                                                         <Form.Group as={Col} md="5" controlId="validationCustom01">
-                                                            <Form.Label>path menu</Form.Label>
+                                                            <Form.Label>ชื่อหมวดพัสดุ</Form.Label>
                                                             <Form.Control
                                                                 required
                                                                 type="text"
@@ -93,7 +79,7 @@ const AddandEditMenu: NextComponentType = () => {
                                                     </Row>
                                                     <Row className="mb-3">
                                                         <Form.Group as={Col} md="5" controlId="validationCustom01">
-                                                            <Form.Label>เมนูหลัก</Form.Label>
+                                                            <Form.Label>กลุ่มของพัสดุ</Form.Label>
                                                             <Select
                                                                 className="basic-single"
                                                                 classNamePrefix="select"
@@ -107,42 +93,72 @@ const AddandEditMenu: NextComponentType = () => {
                                                                 options={options}
                                                             />
                                                         </Form.Group>
+                                                    </Row>
+
+
+                                                    รายละเอียดค่าเสื่อมราคา (ด้านล่างทั้งหมดนี้จะอยู่ในการเลือก dropdown กลุ่มของพัสดุ)
+                                                    <Row className="mb-3">
                                                         <Form.Group as={Col} md="5" controlId="validationCustom01">
-                                                            <Form.Label>ลำดับ</Form.Label>
+                                                            <Form.Label>ประเภทครุภัณฑ์</Form.Label>
+                                                            <Select
+                                                                className="basic-single"
+                                                                classNamePrefix="select"
+                                                                // defaultValue={colourOptions[0]}
+                                                                // isDisabled={isDisabled}
+                                                                // isLoading={isLoading}
+                                                                isClearable={true}
+                                                                // isRtl={isRtl}
+                                                                isSearchable={true}
+                                                                name="color"
+                                                                options={options}
+                                                            />
+                                                        </Form.Group>
+                                                    </Row>
+                                                    <Row className="mb-3">
+                                                        <Form.Group as={Col} md="5" controlId="validationCustom01">
+                                                            <Form.Label>ประเภทค่าเสื่อมราคา</Form.Label>
+                                                            <Select
+                                                                className="basic-single"
+                                                                classNamePrefix="select"
+                                                                // defaultValue={colourOptions[0]}
+                                                                // isDisabled={isDisabled}
+                                                                // isLoading={isLoading}
+                                                                isClearable={true}
+                                                                // isRtl={isRtl}
+                                                                isSearchable={true}
+                                                                name="color"
+                                                                options={options}
+                                                            />
+                                                        </Form.Group>
+                                                    </Row>
+                                                    <Row className="mb-3">
+                                                        <Form.Group as={Col} md="5" controlId="validationCustom01">
+                                                            <Form.Label>อายุการใช้งาน (ปี)</Form.Label>
                                                             <Form.Control
                                                                 required
                                                                 type="text"
                                                                 placeholder="กรอกข้อมูล....."
                                                             />
-
                                                         </Form.Group>
                                                     </Row>
                                                     <Row className="mb-3">
-                                                        <Form.Group as={Col} md="10" controlId="validationCustom01">
-                                                            <Form.Label>กลุ่มผู้ใช้</Form.Label>
-                                                            <Form className="groupbox">
-                                                                <Row>
-                                                                    {
-                                                                        checkboxoptions.map((obj: any, index: number) => {
-                                                                            return (
-                                                                                <Col md="3" xs="6">
-                                                                                    <div key={`inline-${index}`} className="mb-3">
-                                                                                        <Form.Check
-                                                                                            inline
-                                                                                            label={obj.label}
-                                                                                            name="group1"
-                                                                                            type='checkbox'
-                                                                                            checked={obj.values}
-                                                                                            id={`inline-${obj.cid}-1`}
-                                                                                            onChange={onchangecheckbox}
-                                                                                        />
-                                                                                    </div>
-                                                                                </Col>
-                                                                            )
-                                                                        })
-                                                                    }
-                                                                </Row>
-                                                            </Form>
+                                                        <Form.Group as={Col} md="5" controlId="validationCustom01">
+                                                            <Form.Label>มูลค่าซาก</Form.Label>
+                                                            <Form.Control
+                                                                required
+                                                                type="text"
+                                                                placeholder="กรอกข้อมูล....."
+                                                            />
+                                                        </Form.Group>
+                                                    </Row>
+                                                    <Row className="mb-3">
+                                                        <Form.Group as={Col} md="5" controlId="validationCustom01">
+                                                            <Form.Label>ค่าเสื่อมต่อปี (%)</Form.Label>
+                                                            <Form.Control
+                                                                required
+                                                                type="text"
+                                                                placeholder="กรอกข้อมูล....."
+                                                            />
                                                         </Form.Group>
                                                     </Row>
                                                 </Form>
@@ -165,4 +181,4 @@ const AddandEditMenu: NextComponentType = () => {
     );
 }
 
-export default AddandEditMenu
+export default Adddepreciationlist

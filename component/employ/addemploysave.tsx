@@ -36,7 +36,7 @@ const AddEmploysave: NextComponentType = () => {
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
-                <BsPlus />เพิ่มข้อมูล
+                <BsPlus size="25px" title="Test" color="#fff"/>เพิ่มข้อมูล
             </Button>
 
             <div className="modal-container custom-map-modal">

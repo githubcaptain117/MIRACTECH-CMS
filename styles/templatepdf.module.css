@@ -1,0 +1,56 @@
+.saveA4 {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 56.692913px 75.590551px 0px 113.385826px;
+    margin: 10mm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    line-height: 22px;
+}
+
+.savelogo {
+    height: 56.692913px;
+    vertical-align: baseline;
+}
+
+.savetoppic {
+    font-size: 29px;
+    font-weight: bold;
+    padding-left: 26%;
+}
+
+.saveparagraph {
+    text-indent: 94.488188px; /*กำหนดค่าย่อหน้า*/
+}
+
+.savesignature {
+    padding-left: 50%;
+}
+
+.savetablename {
+    width: 100%;
+}
+
+.savetablesignaturename {
+    width: 100%;
+    text-align: center;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.savetablepricereport table {
+    width: 100%;
+}
+
+.savetablepricereport tr {
+    border: 1px solid black;
+}
+
+.savetablepricereport td {
+    border: 1px solid black;
+    text-align: center;
+}

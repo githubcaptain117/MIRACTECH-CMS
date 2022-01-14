@@ -64,7 +64,7 @@ const Mynavbar: NextPage = () => {
             id: 2,
             norow: 2,
             namesubmenu: 'หมวดเงินงบประมาณ',
-            path: '',
+            path: '/basicinfo/moneylist',
             namemenu: 'ข้อมูลพื้นฐาน',
             typeuser: ['', '', ''],
             status: 'Y'
@@ -73,7 +73,7 @@ const Mynavbar: NextPage = () => {
             id: 3,
             norow: 3,
             namesubmenu: 'สถานที่ตั้งครุภัณฑ์',
-            path: '',
+            path: '/basicinfo/roomlist',
             namemenu: 'ข้อมูลพื้นฐาน',
             typeuser: ['', '', ''],
             status: 'Y'
@@ -82,7 +82,7 @@ const Mynavbar: NextPage = () => {
             id: 4,
             norow: 4,
             namesubmenu: 'ประเภทภาษีหัก ณ ที่จ่าย',
-            path: '',
+            path: '/basicinfo/typevatlist',
             namemenu: 'ข้อมูลพื้นฐาน',
             typeuser: ['', '', ''],
             status: 'Y'
@@ -91,7 +91,7 @@ const Mynavbar: NextPage = () => {
             id: 5,
             norow: 5,
             namesubmenu: 'ประเภทเสื่อมราคา',
-            path: '',
+            path: '/basicinfo/depreciationlist',
             namemenu: 'ข้อมูลพื้นฐาน',
             typeuser: ['', '', ''],
             status: 'Y'
@@ -100,7 +100,7 @@ const Mynavbar: NextPage = () => {
             id: 6,
             norow: 6,
             namesubmenu: 'หน่วยนับ',
-            path: '',
+            path: '/basicinfo/unitlist',
             namemenu: 'ข้อมูลพื้นฐาน',
             typeuser: ['', '', ''],
             status: 'Y'
@@ -109,7 +109,7 @@ const Mynavbar: NextPage = () => {
             id: 7,
             norow: 7,
             namesubmenu: 'หมวดพัสดุ',
-            path: '',
+            path: '/basicinfo/parcelcategorylist',
             namemenu: 'ข้อมูลพื้นฐาน',
             typeuser: ['', '', ''],
             status: 'Y'
@@ -117,8 +117,8 @@ const Mynavbar: NextPage = () => {
         {
             id: 8,
             norow: 8,
-            namesubmenu: 'รายชื่อพัสดุ',
-            path: '',
+            namesubmenu: 'ประเภทอ้างอิง',
+            path: '/basicinfo/referencetypelist',
             namemenu: 'ข้อมูลพื้นฐาน',
             typeuser: ['', '', ''],
             status: 'Y'
@@ -126,7 +126,7 @@ const Mynavbar: NextPage = () => {
         {
             id: 9,
             norow: 9,
-            namesubmenu: 'ประเภทอ้างอิง',
+            namesubmenu: 'รายชื่อพัสดุ',
             path: '',
             namemenu: 'ข้อมูลพื้นฐาน',
             typeuser: ['', '', ''],
@@ -386,13 +386,13 @@ const Mynavbar: NextPage = () => {
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/"> <img src="../img/logo.png" alt="Vercel Logo" width="35px" height="35px" /> NDR</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
-                    </button>
+                    </button> */}
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">หน่าแรก</a>
+                                <a className="nav-link active" aria-current="page" href="/">หน้าแรก</a>
                             </li>
                             <li className="nav-item dropdown">
                                 <NavDropdown title="จัดการระบบ" id="basic-nav-dropdown" show={show1} onMouseEnter={showDropdown1} onMouseLeave={hideDropdown1}>

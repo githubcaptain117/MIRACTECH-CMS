@@ -8,7 +8,7 @@ import { BsCheckBox, BsFileEarmarkArrowDown, BsPencilSquare, BsPlus, BsSearch, B
 import { MdPrint, MdSearch } from 'react-icons/md';
 //-------------------------------------------------------------------
 import th from 'date-fns/locale/th';
-import AddandEditUser from '../../component/usermanagement/addandedituser';
+import Addroomlist from '../../component/basicinfo/addroomlist';
 registerLocale('th', th)
 
 
@@ -61,7 +61,7 @@ const Roomlist: NextPage = () => {
         <div>
             <main className={styles.main}>
                 <Card>
-                    <Card.Header className="CardHeader" as="h5">ผู้ใช้งานระบบ</Card.Header>
+                    <Card.Header className="CardHeader" as="h5">สถานที่</Card.Header>
                     <Card.Body>
                         <Form>
                             <Row>
@@ -69,40 +69,8 @@ const Roomlist: NextPage = () => {
                                     <div className={styles.frominput}>
                                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
                                             <Row className="mb-3">
-                                                <Form.Group as={Col} md="3" controlId="validationCustom05">
-                                                    <Form.Label>กลุ่มผู้ใช้</Form.Label>
-                                                    <Select
-                                                        className="basic-single"
-                                                        classNamePrefix="select"
-                                                        // defaultValue={colourOptions[0]}
-                                                        // isDisabled={isDisabled}
-                                                        // isLoading={isLoading}
-                                                        isClearable={true}
-                                                        // isRtl={isRtl}
-                                                        isSearchable={true}
-                                                        name="color"
-                                                        options={options}
-                                                    />
-                                                </Form.Group>
-                                                <Form.Group as={Col} md="3" controlId="validationCustom05">
-                                                    <Form.Label>หน่วยงาน</Form.Label>
-                                                    <Select
-                                                        className="basic-single"
-                                                        classNamePrefix="select"
-                                                        // defaultValue={colourOptions[0]}
-                                                        // isDisabled={isDisabled}
-                                                        // isLoading={isLoading}
-                                                        isClearable={true}
-                                                        // isRtl={isRtl}
-                                                        isSearchable={true}
-                                                        name="color"
-                                                        options={options}
-                                                    />
-                                                </Form.Group>
-                                            </Row>
-                                            <Row className="mb-3">
                                                 <Form.Group as={Col} md="6" controlId="validationCustom05">
-                                                    <Form.Label>ชื่อผู้ใช้ระบบ</Form.Label>
+                                                    <Form.Label>ค้นหาห้อง</Form.Label>
                                                     <Form.Control
                                                         required
                                                         type="text"
@@ -129,7 +97,7 @@ const Roomlist: NextPage = () => {
                         <Row className="mb-3">
                             <Col md="4">
                                 {/* <Button type="submit"><BsPlus /> เพิ่มข้อมูล</Button> */}
-                                <AddandEditUser />
+                                <Addroomlist />
                             </Col>
                             <Col md="4">
 
@@ -145,11 +113,9 @@ const Roomlist: NextPage = () => {
                                 <thead>
                                     <tr>
                                         <th style={{ textAlign: 'center' }}>ลำดับ</th>
-                                        <th style={{ textAlign: 'center' }}>UserNaem</th>
-                                        <th style={{ textAlign: 'center' }}>หน่วยงาน</th>
-                                        <th style={{ textAlign: 'center' }}>กลุ่มผู้ใช้</th>
+                                        <th style={{ textAlign: 'center' }}>รหัส</th>
+                                        <th style={{ textAlign: 'center' }}>ชื่อสถานที่</th>
                                         <th style={{ textAlign: 'center' }}>แก้ไข</th>
-                                        <th style={{ textAlign: 'center' }}>สถานะ</th>
                                         <th style={{ textAlign: 'center' }}>ลบ</th>
                                     </tr>
                                 </thead>
@@ -161,9 +127,7 @@ const Roomlist: NextPage = () => {
                                                     <td>{data.no}</td>
                                                     <td>{data.username}</td>
                                                     <td>{data.agency}</td>
-                                                    <td>{data.roleuser}</td>
                                                     <td style={{ textAlign: 'center' }}><Button variant="light"><BsPencilSquare size="25px" color="blue" /></Button></td>
-                                                    <td>{data.status}</td>
                                                     <td style={{ textAlign: 'center' }}><Button variant="light"><BsTrash size="25px" color="red" /></Button></td>
                                                 </tr>
                                             )
