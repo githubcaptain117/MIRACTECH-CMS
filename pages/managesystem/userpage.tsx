@@ -157,7 +157,7 @@ const Userpage: NextPage = () => {
                                     {
                                         datatable.map(data => {
                                             return (
-                                                <tr>
+                                                <tr key={data.no}>
                                                     <td>{data.no}</td>
                                                     <td>{data.username}</td>
                                                     <td>{data.agency}</td>

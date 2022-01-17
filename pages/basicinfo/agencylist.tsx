@@ -125,7 +125,7 @@ const Agencylist: NextPage = () => {
                                     {
                                         datatable.map(data => {
                                             return (
-                                                <tr>
+                                                <tr key={data.no}>
                                                     <td>{data.no}</td>
                                                     <td>{data.agency}</td>
                                                     <td style={{ textAlign: 'center' }}><Button variant="light"><BsPencilSquare size="25px" color="blue" /></Button></td>

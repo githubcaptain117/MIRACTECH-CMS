@@ -390,7 +390,7 @@ const Employsave: NextPage = () => {
                                     {
                                         datatable.map(data => {
                                             return (
-                                                <tr>
+                                                <tr key={data.no}>
                                                     <td>{data.no}</td>
                                                     <td>{data.status}</td>
                                                     <td>{data.numberpaper}</td>
